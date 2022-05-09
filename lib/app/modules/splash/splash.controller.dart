@@ -14,16 +14,17 @@ class SplashController extends GetxController {
     logChecker.writeIfNull("isLoggedIn", "true");
     isLoggedIn = logChecker.read("isLoggedIn");
 
-    if (isLoggedIn == "true") {
+    if (isLoggedIn == "false") {
       Get.offAllNamed(Routes.HOME);
     } else {
-      Get.offAllNamed(Routes.HOME);
+      Get.offAllNamed(Routes.LOGIN);
     }
     timer.cancel();
   }
 
   @override
   void onInit() {
+    printInfo(info: "CHECKING LOGIN CREDENTIALS");
     super.onInit();
   }
 
@@ -31,7 +32,7 @@ class SplashController extends GetxController {
   void onReady() {
     Timer.periodic(Duration(seconds: 3), (timer) {
       handleLogin(timer);
-      print(timer);
+      // print(timer);
     });
     super.onReady();
   }

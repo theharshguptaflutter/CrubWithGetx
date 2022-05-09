@@ -1,23 +1,289 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:crud_getxcli/app/utils/theme/outlined_gradient_button.dart';
+import 'package:crud_getxcli/app/utils/theme/resources.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'login.controller.dart';
 
 class LoginView extends GetView<LoginController> {
+  // bool fistcheck = false;
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text('LoginView'),
-        centerTitle: true,
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          backgroundImage(width, height),
+        ],
       ),
-      body: Center(
-        child: Text(
-          'LoginView is working',
-          style: TextStyle(fontSize: 20),
+    ));
+  }
+
+  backgroundImage(double width, double height) {
+    return Container(
+      height: Get.height,
+      width: Get.width,
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          Color.fromARGB(255, 196, 11, 103),
+          Color.fromARGB(255, 6, 105, 129),
+        ],
+      )),
+      child: textFieldArea(width, height),
+    );
+  }
+
+  textFieldArea(double width, double height) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 70),
+          width: width - 40,
+          height: height - 250,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(40),
+            color: Colors.white54,
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                    bottom: 55.0, top: 80.0, left: 44, right: 44),
+                child: Image.asset(Resources.logodemo),
+              ),
+              Container(
+                child: SingleChildScrollView(
+                    child: Column(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    // ignore: prefer_const_constructors
+
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          hintText: "Enter Your Email",
+                          prefixIcon: const Icon(
+                            Icons.person,
+                            color: Colors.white,
+                          ),
+                          hintStyle: TextStyle(color: Colors.white),
+                          labelText: "Email",
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 20,
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          hintText: "Enter Your Password",
+                          labelText: "Password",
+                          prefixIcon: const Icon(
+                            Icons.lock,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    //  Padding(
+                    //  padding: const EdgeInsets.only(top: 10.0, left: 10.0),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Obx(
+                                  () => Checkbox(
+                                    value: controller.checkBox.value,
+                                    checkColor: Colors.white,
+                                    activeColor: Colors.blue,
+                                    onChanged: (value) {
+                                      //controller.checkBox.value = true;
+                                      controller.checkBox.toggle();
+                                      print(controller.checkBox);
+                                    },
+                                  ),
+                                ),
+                                //
+                                // Column(
+                                //   mainAxisAlignment: MainAxisAlignment.start,
+                                //   children: [
+                                Text("Remember me"),
+                                //   ],
+                                //  ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 15.0),
+                              child: Container(child: Text("Forget password")),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(25.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              print("working");
+                            },
+                            child: Container(
+                              width: 180,
+                              height: 55,
+                              decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      // color: Colors.grey,
+                                      // blurRadius: 35.0,
+                                      offset: Offset(2, 2),
+                                      blurRadius: 18,
+                                      color: Color.fromRGBO(0, 0, 0, 0.16),
+                                    ),
+                                  ],
+                                  //color: Color.fromARGB(255, 6, 105, 129),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      Color.fromARGB(255, 6, 105, 129),
+                                      Color.fromARGB(255, 63, 128, 143),
+                                    ],
+                                  ),
+                                  borderRadius: BorderRadius.circular(25)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "Submit",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    // )
+                  ],
+                )),
+              ),
+            ],
+          ),
+          //),
         ),
-      ),
+        signinIcons(),
+      ],
+    );
+  }
+
+  signinIcons() {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            OutlinedGradientButton(
+              buttonWidth: 35,
+              buttonHeight: 35,
+              innerWidget: Container(
+                margin: EdgeInsets.all(3),
+                // decoration: BoxDecoration(
+                //   color: Colors.greenAccent,
+                // borderRadius: BorderRadius.circular(60),
+                // ),
+                child: CircleAvatar(
+                  backgroundImage: AssetImage(Resources.fbIcon),
+                  //child: Image.asset(Resources.fbIcon),
+                ),
+              ),
+            ),
+            // Container(
+            //   height: 40,
+            //   width: 40,
+            //   color: Colors.white60,
+            //   child: Container(
+            //     width: 25,
+            //     height: 25,
+            //     child: CircleAvatar(
+            //       backgroundImage: AssetImage(Resources.fbIcon),
+            //       //child: Image.asset(Resources.fbIcon),
+            //     ),
+            //   ),
+            // ),
+            SizedBox(
+              width: 10.0,
+            ),
+
+            OutlinedGradientButton(
+              buttonWidth: 35,
+              buttonHeight: 35,
+              innerWidget: Container(
+                margin: EdgeInsets.all(3),
+                child: CircleAvatar(
+                  backgroundImage: AssetImage(Resources.gIcon),
+                ),
+              ),
+            ),
+            // Container(
+            //   width: 25,
+            //   height: 25,
+            //   child: CircleAvatar(
+            //     backgroundImage: AssetImage(Resources.gIcon),
+            //     //child: Image.asset(Resources.gIcon),
+            //   ),
+            // ),
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        InkWell(
+          child: Text("Don't have any account? Sign Up here",
+              style: GoogleFonts.lato(
+                  fontStyle: FontStyle.normal, color: Colors.white)),
+          onTap: () {},
+        ),
+      ],
     );
   }
 }

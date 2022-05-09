@@ -1,5 +1,10 @@
 class Resources {
   //these are the icons
+  static String fbIcon = "assets/icons/fb_icon.png";
+  static String gIcon = "assets/icons/g_icon.png";
+  static String logodemo = "assets/icons/logoBlack.png";
 
-  static String appLogo = "assets/images/logo.jpg";
+//these are the images
+  static String appLogo = "assets/images/logo.png";
+  static String bgimage = "assets/images/bigbg.svg";
 }
