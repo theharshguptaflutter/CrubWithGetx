@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:crud_getxcli/app/routes/app_pages.dart';
 import 'package:crud_getxcli/app/utils/theme/outlined_gradient_button.dart';
 import 'package:crud_getxcli/app/utils/theme/resources.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -97,19 +98,35 @@ class LoginView extends GetView<LoginController> {
 
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.red,
+                      child: Obx(
+                        () => TextField(
+                          obscureText: controller.isPasswordHidden.value,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.red,
+                              ),
+                              borderRadius: BorderRadius.circular(20.0),
                             ),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          hintText: "Enter Your Password",
-                          labelText: "Password",
-                          prefixIcon: const Icon(
-                            Icons.lock,
-                            color: Colors.white,
+                            hintText: "Enter Your Password",
+                            labelText: "Password",
+                            suffix: InkWell(
+                              child: Icon(
+                                controller.isPasswordHidden.value
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                              onTap: () {
+                                controller.isPasswordHidden.value =
+                                    !controller.isPasswordHidden.value;
+                              },
+                            ),
+                            prefixIcon: const Icon(
+                              Icons.lock,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -277,12 +294,32 @@ class LoginView extends GetView<LoginController> {
         SizedBox(
           height: 10,
         ),
-        InkWell(
-          child: Text("Don't have any account? Sign Up here",
-              style: GoogleFonts.lato(
-                  fontStyle: FontStyle.normal, color: Colors.white)),
-          onTap: () {},
+        // InkWell(
+        RichText(
+          text: TextSpan(
+            text: "Don't have any account? ",
+            style: GoogleFonts.lato(
+                fontStyle: FontStyle.normal, color: Colors.white),
+            // ignore: prefer_const_literals_to_create_immutables
+            children: <TextSpan>[
+              TextSpan(
+                text: " Sign Up here",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    //print('Tap Here onTap');
+
+                    Get.toNamed(Routes.REGISTRATION);
+                  },
+              ),
+            ],
+          ),
         ),
+        //Text("Don't have any account? Sign Up here",
+        //    style: GoogleFonts.lato(
+        //        fontStyle: FontStyle.normal, color: Colors.white)),
+        //  onTap: () {},
+        // ),
       ],
     );
   }

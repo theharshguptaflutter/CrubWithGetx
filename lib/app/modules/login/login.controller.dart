@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement LoginController
-
+  final isPasswordHidden = true.obs;
   final checkBox = false.obs;
   final count = 0.obs;
   @override
