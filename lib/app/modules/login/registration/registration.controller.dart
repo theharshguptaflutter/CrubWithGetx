@@ -1,3 +1,4 @@
+import 'package:crud_getxcli/app/routes/app_pages.dart';
 import 'package:crud_getxcli/app/utils/services/rest_apis.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -89,7 +90,7 @@ class RegistrationController extends GetxController {
 
       String dobdata = DateFormat('yyyy-MM-dd – kk:mm').format(formattedDate);
 
-      var responseBody = API.regApi(name.text, number.text, email.text,
+      var responseBody = await API.regApi(name.text, number.text, email.text,
           gender.text, password.text, dobdata);
       if (responseBody == null) {
         // SnackbarCustom.errorBar(
@@ -123,6 +124,8 @@ class RegistrationController extends GetxController {
             duration: Duration(seconds: 3),
             margin: EdgeInsets.all(20));
         // dobdata.clear();
+
+        Get.toNamed(Routes.LOGIN);
       }
     }
   }

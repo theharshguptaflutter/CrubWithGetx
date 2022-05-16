@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:crud_getxcli/app/routes/app_pages.dart';
+import 'package:crud_getxcli/app/utils/theme/button.dart';
+import 'package:crud_getxcli/app/utils/theme/colors.dart';
 import 'package:crud_getxcli/app/utils/theme/outlined_gradient_button.dart';
 import 'package:crud_getxcli/app/utils/theme/resources.dart';
 import 'package:flutter/gestures.dart';
@@ -51,8 +53,8 @@ class LoginView extends GetView<LoginController> {
       children: [
         Container(
           margin: EdgeInsets.symmetric(horizontal: 10, vertical: 70),
-          width: width - 40,
-          height: height - 250,
+          width: Get.width - 40,
+          height: Get.height - 250,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),
             color: Colors.white54,
@@ -74,6 +76,7 @@ class LoginView extends GetView<LoginController> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
+                        controller: controller.email,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -100,6 +103,7 @@ class LoginView extends GetView<LoginController> {
                       padding: const EdgeInsets.all(8.0),
                       child: Obx(
                         () => TextField(
+                          controller: controller.password,
                           obscureText: controller.isPasswordHidden.value,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
@@ -131,9 +135,6 @@ class LoginView extends GetView<LoginController> {
                         ),
                       ),
                     ),
-
-                    //  Padding(
-                    //  padding: const EdgeInsets.only(top: 10.0, left: 10.0),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -154,13 +155,7 @@ class LoginView extends GetView<LoginController> {
                                     },
                                   ),
                                 ),
-                                //
-                                // Column(
-                                //   mainAxisAlignment: MainAxisAlignment.start,
-                                //   children: [
                                 Text("Remember me"),
-                                //   ],
-                                //  ),
                               ],
                             ),
                             Padding(
@@ -169,63 +164,25 @@ class LoginView extends GetView<LoginController> {
                             ),
                           ],
                         ),
+
+                        // submitButton();
                         Padding(
                           padding: const EdgeInsets.all(25.0),
                           child: GestureDetector(
                             onTap: () {
-                              print("working");
+                              // print("working");
+                              controller.userLogin();
                             },
-                            child: Container(
-                              width: 180,
-                              height: 55,
-                              decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      // color: Colors.grey,
-                                      // blurRadius: 35.0,
-                                      offset: Offset(2, 2),
-                                      blurRadius: 18,
-                                      color: Color.fromRGBO(0, 0, 0, 0.16),
-                                    ),
-                                  ],
-                                  //color: Color.fromARGB(255, 6, 105, 129),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Color.fromARGB(255, 6, 105, 129),
-                                      Color.fromARGB(255, 63, 128, 143),
-                                    ],
-                                  ),
-                                  borderRadius: BorderRadius.circular(25)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      "Submit",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                            child: submitButton(btnName: "Submit"),
                           ),
                         )
                       ],
                     ),
-                    // )
                   ],
                 )),
               ),
             ],
           ),
-          //),
         ),
         signinIcons(),
       ],
@@ -324,3 +281,55 @@ class LoginView extends GetView<LoginController> {
     );
   }
 }
+
+// class submitButton extends StatelessWidget {
+//   const submitButton({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: 180,
+//       height: 55,
+//       decoration: BoxDecoration(
+//           // ignore: prefer_const_literals_to_create_immutables
+//           boxShadow: [
+//             BoxShadow(
+//               // color: Colors.grey,
+//               // blurRadius: 35.0,
+//               offset: Offset(2, 2),
+//               blurRadius: 18,
+//               color: AppColor.darkblack,
+//             ),
+//           ],
+//           //color: Color.fromARGB(255, 6, 105, 129),
+//           gradient: LinearGradient(
+//             begin: Alignment.topCenter,
+//             end: Alignment.bottomCenter,
+//             // ignore: prefer_const_literals_to_create_immutables
+//             colors: [
+//               AppColor.darkblue,
+//               AppColor.lightlue
+//             ],
+//           ),
+//           borderRadius: BorderRadius.circular(25)),
+//       child: Padding(
+//         padding: const EdgeInsets.all(8.0),
+//         child: Container(
+//           child: Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Text(
+//               "Submit",
+//               style: TextStyle(
+//                   color: Colors.white,
+//                   fontSize: 18,
+//                   fontWeight: FontWeight.bold),
+//               textAlign: TextAlign.center,
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -11,10 +11,18 @@ class SplashController extends GetxController {
   String isLoggedIn = "";
 
   void handleLogin(timer) {
-    logChecker.writeIfNull("isLoggedIn", "true");
-    isLoggedIn = logChecker.read("isLoggedIn");
+    //logChecker.writeIfNull("isLoggedIn", "true");
+    dynamic isLoggedIn = logChecker.read("isLoggedIn");
 
-    if (isLoggedIn == "false") {
+    //logChecker.writeIfNull("isLoggedIn", "true");
+    //isLoggedIn = logChecker.read("isLoggedIn");
+
+    print(isLoggedIn);
+
+    if (isLoggedIn == "null") {
+      Get.offAllNamed(Routes.LOGIN);
+    }
+    if (isLoggedIn == true) {
       Get.offAllNamed(Routes.HOME);
     } else {
       Get.offAllNamed(Routes.LOGIN);

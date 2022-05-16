@@ -7,4 +7,5 @@ class Resources {
 //these are the images
   static String appLogo = "assets/images/logo.png";
   static String bgimage = "assets/images/bigbg.svg";
+  static String profilebgimage = "assets/images/profile-background.jpg";
 }

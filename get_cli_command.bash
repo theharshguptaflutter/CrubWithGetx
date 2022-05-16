@@ -32,4 +32,8 @@
 
 # create a page with name of Home in home folder i will use this Home Page as a dashboard route
 #    1- get create page:home on modules NOTE* delete the previews folder the of home
-#
+#   2- get create page:dashboard on home
+#   3- get create page:Socialfeed on home
+#   4- get create page:user_profile on home
+
+# get generate model on data with assets/json/user-login.json

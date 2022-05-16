@@ -26,6 +26,10 @@ class AppColor {
   static const Color lightBlue = Color(0xff848DFF);
   static const Color fadedBlue = Color(0xff8A98BA);
   static const Color greenLight = Color(0xff4CD964);
+
+  static const Color darkblue = Color.fromARGB(255, 6, 105, 129);
+  static const Color lightlue = Color.fromARGB(255, 63, 128, 143);
+  static const Color darkblack = Color.fromRGBO(0, 0, 0, 0.16);
 }
 
 class CustomTheme {

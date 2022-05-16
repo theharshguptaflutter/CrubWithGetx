@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:crud_getxcli/app/utils/theme/button.dart';
 import 'package:crud_getxcli/app/utils/theme/resources.dart';
 import 'package:flutter/material.dart';
 
@@ -48,8 +49,8 @@ textFieldBorder(double width, double height) {
     children: [
       Container(
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 70),
-        width: width - 40,
-        height: height - 140,
+        width: Get.width - 40,
+        height: Get.height - 140,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: Colors.white54,
@@ -198,7 +199,18 @@ textFieldInput() {
           textAlign: TextAlign.left,
         ),
       ),
-      submitButton(),
+      // submitButton(),
+
+      Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: GestureDetector(
+          onTap: () {
+            print("working");
+            controller.regSubmit();
+          },
+          child: submitButton(btnName: "Register now"),
+        ),
+      )
     ],
   );
 }
@@ -213,56 +225,56 @@ logoMain() {
   );
 }
 
-submitButton() {
-  return Padding(
-    padding: const EdgeInsets.all(25.0),
-    child: GestureDetector(
-      onTap: () {
-        //   print(controller.chooseDate());
-        controller.regSubmit();
-      },
-      child: Container(
-        width: 180,
-        height: 55,
-        decoration: BoxDecoration(
-            // ignore: prefer_const_literals_to_create_immutables
-            boxShadow: [
-              BoxShadow(
-                // color: Colors.grey,
-                // blurRadius: 35.0,
-                offset: Offset(2, 2),
-                blurRadius: 18,
-                color: Color.fromRGBO(0, 0, 0, 0.16),
-              ),
-            ],
-            //color: Color.fromARGB(255, 6, 105, 129),
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              // ignore: prefer_const_literals_to_create_immutables
-              colors: [
-                Color.fromARGB(255, 6, 105, 129),
-                Color.fromARGB(255, 63, 128, 143),
-              ],
-            ),
-            borderRadius: BorderRadius.circular(25)),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Submit",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-}
+// submitButton() {
+//   return Padding(
+//     padding: const EdgeInsets.all(25.0),
+//     child: GestureDetector(
+//       onTap: () {
+//         //   print(controller.chooseDate());
+//         controller.regSubmit();
+//       },
+//       child: Container(
+//         width: 180,
+//         height: 55,
+//         decoration: BoxDecoration(
+//             // ignore: prefer_const_literals_to_create_immutables
+//             boxShadow: [
+//               BoxShadow(
+//                 // color: Colors.grey,
+//                 // blurRadius: 35.0,
+//                 offset: Offset(2, 2),
+//                 blurRadius: 18,
+//                 color: Color.fromRGBO(0, 0, 0, 0.16),
+//               ),
+//             ],
+//             //color: Color.fromARGB(255, 6, 105, 129),
+//             gradient: LinearGradient(
+//               begin: Alignment.topCenter,
+//               end: Alignment.bottomCenter,
+//               // ignore: prefer_const_literals_to_create_immutables
+//               colors: [
+//                 Color.fromARGB(255, 6, 105, 129),
+//                 Color.fromARGB(255, 63, 128, 143),
+//               ],
+//             ),
+//             borderRadius: BorderRadius.circular(25)),
+//         child: Padding(
+//           padding: const EdgeInsets.all(8.0),
+//           child: Container(
+//             child: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Text(
+//                 "Submit",
+//                 style: TextStyle(
+//                     color: Colors.white,
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold),
+//                 textAlign: TextAlign.center,
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     ),
+//   );
+// }

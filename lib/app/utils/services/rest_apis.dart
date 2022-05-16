@@ -23,4 +23,11 @@ class API {
           "dob": dobdata
         });
   }
+
+  static loginUserApi(email, password) async {
+    return ApiUtils.postRequest(RestRoutes.loginUser, {
+      "email": email,
+      "password": password,
+    });
+  }
 } //end Class API

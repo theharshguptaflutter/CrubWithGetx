@@ -16,6 +16,7 @@ class ApiUtils {
     final response = await http.post(Uri.parse(url),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
+          'Charset': 'utf-8'
         },
         body: jsonEncode(bodyObject));
     await checkResponse(response);

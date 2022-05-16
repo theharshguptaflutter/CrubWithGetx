@@ -1,0 +1,12 @@
+{
+    "status": "200",
+    "user": [
+        {
+            "name": "Surya Gupta",
+            "email": "surya@gmail.com",
+            "phone": 420419828,
+            "gender": "male",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU3VyeWEgR3VwdGEiLCJlbWFpbCI6InN1cnlhQGdtYWlsLmNvbSIsInBob25lIjo0MjA0MTk4MjgsImdlbmRlciI6Im1hbGUiLCJpYXQiOjE2NTIyMDQ2MTAsImV4cCI6MTY1MjI5MTAxMH0.t8jwCVwAL5G2OlCbjlORrloZTdz1yrUbtDBh4o7DUg4"
+        }
+    ]
+}
