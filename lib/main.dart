@@ -26,6 +26,9 @@ Future<void> main() async {
   await GetStorage.init();
   runApp(
     GetMaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.light,
       title: "CrubWithGetx",
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.cupertino,

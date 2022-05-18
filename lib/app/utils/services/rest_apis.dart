@@ -30,4 +30,9 @@ class API {
       "password": password,
     });
   }
+
+  static UserProfileImgApi(userimage) async {
+    return ApiUtils.postRequest(
+        RestRoutes.userProfileUpload, {"profileimage": userimage});
+  }
 } //end Class API

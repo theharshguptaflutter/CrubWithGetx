@@ -19,122 +19,194 @@ class UserProfileView extends GetView<UserProfileController> {
         body: SafeArea(
             child: ListView(
       padding: EdgeInsets.zero,
-      children: [
-        topArea(height, width),
-        userNameBio(),
-        Column(
-          children: [
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(35.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.credit_card,
-                            size: 35,
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Text(
-                            "Payment Methods",
-                            style: GoogleFonts.aleo(
-                              fontStyle: FontStyle.normal,
-                              fontSize: 18,
-                              //  fontWeight: FontWeight.bold
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.notifications_none_outlined,
-                                size: 35,
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Text(
-                                "Notification",
-                                style: GoogleFonts.aleo(
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 18,
-                                  //  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                            ],
-                          ),
-                          SwitchButton()
-                          // Text(
-                          //   "Notification",
-                          //   style: GoogleFonts.aleo(
-                          //     fontStyle: FontStyle.normal,
-                          //     fontSize: 18,
-                          //     //  fontWeight: FontWeight.bold
-                          //   ),
-                          // )
+      children: [topArea(height, width), userNameBio(), userProfileSetting()],
+    )));
+  }
 
-                          //  Obx(() => Text('Switch Setting: ${controller.sx.on}')),
-                          //   Obx(() => Switch(
-                          //     onChanged: (val) => controller.sx.toggle(),
-                          //     value: controller.sx.on.value),
-                          //   )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.lock_outlined,
-                            size: 35,
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Text(
-                            "Change Password",
-                            style: GoogleFonts.aleo(
-                              fontStyle: FontStyle.normal,
-                              fontSize: 18,
-                              //  fontWeight: FontWeight.bold
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.exit_to_app_outlined,
-                            size: 35,
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Text(
-                            "Logout",
-                            style: GoogleFonts.aleo(
-                              fontStyle: FontStyle.normal,
-                              fontSize: 18,
-                              //  fontWeight: FontWeight.bold
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
+  Column userProfileSetting() {
+    return Column(
+      children: [
+        Container(
+          width: Get.width,
+          height: Get.height,
+          //decoration: BoxDecoration(color: ThemeMode.dark ? Color(0xFFFf2f0f0) : ThemeMode.light),
+          child: Padding(
+            padding: const EdgeInsets.all(35.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
                   ),
-                )
-              ],
-            )
-          ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.credit_card,
+                          size: 35,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          "Payment Methods",
+                          style: GoogleFonts.aleo(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 18,
+                            //  fontWeight: FontWeight.bold
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.notifications_none_outlined,
+                              size: 35,
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "Notification",
+                              style: GoogleFonts.aleo(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                //  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ],
+                        ),
+                        SwitchButton()
+                        // Text(
+                        //   "Notification",
+                        //   style: GoogleFonts.aleo(
+                        //     fontStyle: FontStyle.normal,
+                        //     fontSize: 18,
+                        //     //  fontWeight: FontWeight.bold
+                        //   ),
+                        // )
+
+                        //  Obx(() => Text('Switch Setting: ${controller.sx.on}')),
+                        //   Obx(() => Switch(
+                        //     onChanged: (val) => controller.sx.toggle(),
+                        //     value: controller.sx.on.value),
+                        //   )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.dark_mode_outlined,
+                              size: 35,
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "Dark Mode",
+                              style: GoogleFonts.aleo(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                //  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ],
+                        ),
+                        SwitchButton2()
+                        // Text(
+                        //   "Notification",
+                        //   style: GoogleFonts.aleo(
+                        //     fontStyle: FontStyle.normal,
+                        //     fontSize: 18,
+                        //     //  fontWeight: FontWeight.bold
+                        //   ),
+                        // )
+
+                        //  Obx(() => Text('Switch Setting: ${controller.sx.on}')),
+                        //   Obx(() => Switch(
+                        //     onChanged: (val) => controller.sx.toggle(),
+                        //     value: controller.sx.on.value),
+                        //   )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.lock_outlined,
+                          size: 35,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          "Change Password",
+                          style: GoogleFonts.aleo(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 18,
+                            //  fontWeight: FontWeight.bold
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.exit_to_app_outlined,
+                          size: 35,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          "Logout",
+                          style: GoogleFonts.aleo(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 18,
+                            //  fontWeight: FontWeight.bold
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         )
       ],
-    )));
+    );
   }
 
   SwitchButton() {
@@ -144,10 +216,42 @@ class UserProfileView extends GetView<UserProfileController> {
       () => Switch(
           value: controller.switchvaluetest.value,
           onChanged: (value) {
-            //1st code
-            // var datacheck = controller.switchvaluetest.value;
-            controller.switchvaluetestdata(value);
+            // controller.switchvaluetestdata(value);
+            controller.switchvaluetest.toggle();
+            // print(value);
 
+            controller.switchlog(value);
+            //2nd code
+            // if (controller.switchvaluetest.value != true) {
+            //   controller.switchvaluetest.value = true;
+            // } else {
+            //   controller.switchvaluetest.value = false;
+            // }
+          }),
+    );
+
+    // return GetBuilder<UserProfileController>(
+    //     builder: (_) => Switch(
+    //         value: controller.switchvalue.value,
+    //         onChanged: (_) {
+    //           controller.switchlog();
+    //         }));
+  }
+
+  SwitchButton2() {
+    UserProfileController controller = Get.put(UserProfileController());
+
+    return Obx(
+      () => Switch(
+          value: controller.switchDarkmode.value,
+          onChanged: (value) {
+            // controller.switchvaluetestdata(value);
+
+            //Get.changeThemeMode(ThemeMode.dark);
+            controller.switchDarkmode.toggle();
+            // print(value);
+
+            controller.darkModeData(value);
             //2nd code
             // if (controller.switchvaluetest.value != true) {
             //   controller.switchvaluetest.value = true;
@@ -173,7 +277,7 @@ class UserProfileView extends GetView<UserProfileController> {
           children: [
             Container(
               width: Get.width,
-              decoration: BoxDecoration(color: Color(0xFFFf2f0f0)),
+              //    decoration: BoxDecoration(color: Color(0xFFFf2f0f0)),
               child: Text(
                 "Harsh Gupta",
                 style:
@@ -183,7 +287,7 @@ class UserProfileView extends GetView<UserProfileController> {
             ),
             Container(
               width: Get.width,
-              decoration: BoxDecoration(color: Color(0xFFFf2f0f0)),
+              //  decoration: BoxDecoration(color: Color(0xFFFf2f0f0)),
               child: Text(
                 "Bio",
                 style:
@@ -226,7 +330,8 @@ class UserProfileView extends GetView<UserProfileController> {
       right: 155, //give the values according to your requirement
       child: GestureDetector(
         onTap: () {
-          print("camera testing");
+          //  print("camera testing");
+          controller.getUserImage();
         },
         child: Row(
           children: [
@@ -315,7 +420,7 @@ class UserProfileView extends GetView<UserProfileController> {
           width: Get.width,
           height: Get.height / 13,
           decoration: BoxDecoration(
-              color: Color(0xFFFf2f0f0),
+              color: Color.fromARGB(255, 250, 246, 246),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(50),
                 topRight: Radius.circular(50),
