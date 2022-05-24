@@ -2,10 +2,18 @@ import 'package:get/get.dart';
 
 import '../modules/home/Socialfeed/socialfeed.binding.dart';
 import '../modules/home/Socialfeed/socialfeed.view.dart';
+import '../modules/home/add_users/add_users.binding.dart';
+import '../modules/home/add_users/add_users.view.dart';
+import '../modules/home/chat/chat.binding.dart';
+import '../modules/home/chat/chat.view.dart';
 import '../modules/home/dashboard/dashboard.binding.dart';
 import '../modules/home/dashboard/dashboard.view.dart';
+import '../modules/home/google_map/google_map.binding.dart';
+import '../modules/home/google_map/google_map.view.dart';
 import '../modules/home/home.binding.dart';
 import '../modules/home/home.view.dart';
+import '../modules/home/my_location/my_location.binding.dart';
+import '../modules/home/my_location/my_location.view.dart';
 import '../modules/home/user_profile/user_profile.binding.dart';
 import '../modules/home/user_profile/user_profile.view.dart';
 import '../modules/login/login.binding.dart';
@@ -53,6 +61,26 @@ class AppPages {
           name: _Paths.USER_PROFILE,
           page: () => UserProfileView(),
           binding: UserProfileBinding(),
+        ),
+        GetPage(
+          name: _Paths.MY_LOCATION,
+          page: () => MyLocationView(),
+          binding: MyLocationBinding(),
+        ),
+        GetPage(
+          name: _Paths.GOOGLE_MAP,
+          page: () => GoogleMapView(),
+          binding: GoogleMapBinding(),
+        ),
+        GetPage(
+          name: _Paths.CHAT,
+          page: () => ChatView(),
+          binding: ChatBinding(),
+        ),
+        GetPage(
+          name: _Paths.ADD_USERS,
+          page: () => AddUsersView(),
+          binding: AddUsersBinding(),
         ),
       ],
     ),

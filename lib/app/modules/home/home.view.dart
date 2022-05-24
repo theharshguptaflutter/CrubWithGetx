@@ -1,5 +1,7 @@
 import 'package:crud_getxcli/app/modules/home/Socialfeed/socialfeed.view.dart';
+import 'package:crud_getxcli/app/modules/home/add_users/add_users.view.dart';
 import 'package:crud_getxcli/app/modules/home/dashboard/dashboard.view.dart';
+import 'package:crud_getxcli/app/modules/home/my_location/my_location.view.dart';
 import 'package:crud_getxcli/app/modules/home/user_profile/user_profile.view.dart';
 
 import 'package:crud_getxcli/app/utils/theme/colors.dart';
@@ -22,35 +24,48 @@ class HomeView extends GetView<HomeController> {
 Widget bottomNavigationWithViews() {
   return GetBuilder<HomeController>(builder: (controller) {
     return Scaffold(
-        body: SafeArea(
-            child: IndexedStack(
-          index: controller.bottomIndex,
-          children: [
-            SocialfeedView(),
-            UserProfileView(),
-            DashboardView(),
-            DashboardView()
-          ],
-        )),
-        bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Color.fromARGB(255, 216, 214, 214),
-            onTap: controller.changeTabIndex,
-            unselectedItemColor: AppColor.fadedBlue,
-            showUnselectedLabels: true,
-            selectedItemColor: AppColor.ultraPrimaryPurple,
-            currentIndex: controller.bottomIndex,
-            selectedFontSize: 14,
-            unselectedFontSize: 14,
-            type: BottomNavigationBarType.fixed,
-            items: [
-              for (var index in controller.bottomNavItems)
-                BottomNavigationBarItem(
-                  label: index["label"] as String,
-                  backgroundColor: Colors.black,
-                  //convert this object to a widget
-                  icon: index["icon"] as Widget,
-                  activeIcon: index["activeIcon"] as Column,
-                )
-            ]));
+      body: SafeArea(
+          child: IndexedStack(
+        index: controller.bottomIndex,
+        children: [
+          SocialfeedView(),
+          UserProfileView(),
+          AddUsersView(),
+          DashboardView(),
+          MyLocationView()
+        ],
+      )),
+      bottomNavigationBar:
+          // Container(
+          //   decoration: BoxDecoration(
+          //     boxShadow: <BoxShadow>[
+          //       BoxShadow(
+          //         color: Colors.black87,
+          //         blurRadius: 4,
+          //       ),
+          //     ],
+          //   ),
+          BottomNavigationBar(
+              elevation: 0,
+              backgroundColor: Color.fromARGB(255, 216, 214, 214),
+              onTap: controller.changeTabIndex,
+              unselectedItemColor: AppColor.fadedBlue,
+              showUnselectedLabels: true,
+              selectedItemColor: AppColor.ultraPrimaryPurple,
+              currentIndex: controller.bottomIndex,
+              selectedFontSize: 14,
+              unselectedFontSize: 14,
+              type: BottomNavigationBarType.fixed,
+              items: [
+            for (var index in controller.bottomNavItems)
+              BottomNavigationBarItem(
+                label: index["label"] as String,
+                backgroundColor: Colors.black,
+                //convert this object to a widget
+                icon: index["icon"] as Widget,
+                activeIcon: index["activeIcon"] as Column,
+              )
+          ]),
+    );
   });
 }

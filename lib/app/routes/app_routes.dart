@@ -10,6 +10,10 @@ abstract class Routes {
   static const DASHBOARD = _Paths.HOME + _Paths.DASHBOARD;
   static const SOCIALFEED = _Paths.HOME + _Paths.SOCIALFEED;
   static const USER_PROFILE = _Paths.HOME + _Paths.USER_PROFILE;
+  static const MY_LOCATION = _Paths.HOME + _Paths.MY_LOCATION;
+  static const GOOGLE_MAP = _Paths.HOME + _Paths.GOOGLE_MAP;
+  static const CHAT = _Paths.HOME + _Paths.CHAT;
+  static const ADD_USERS = _Paths.HOME + _Paths.ADD_USERS;
 }
 
 abstract class _Paths {
@@ -21,4 +25,8 @@ abstract class _Paths {
   static const DASHBOARD = '/dashboard';
   static const SOCIALFEED = '/socialfeed';
   static const USER_PROFILE = '/user-profile';
+  static const MY_LOCATION = '/my-location';
+  static const GOOGLE_MAP = '/google-map';
+  static const CHAT = '/chat';
+  static const ADD_USERS = '/add-users';
 }

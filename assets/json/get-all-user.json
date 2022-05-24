@@ -1,0 +1,41 @@
+{
+    "status": "200",
+    "alluser": [
+        {
+            "_id": "627ab72f17ba81e01f5968aa",
+            "name": "Surya Gupta",
+            "email": "surya@gmail.com",
+            "password": "$2b$10$alu7tTycxXaSGg65pZ20A.Y8yFVHx6G73cR9bcRuy6x8TSa.x8K1i",
+            "phone": 8420491828,
+            "gender": "Male",
+            "dob": "2022-02-28  24:00",
+            "createdAt": "2022-05-10T19:04:15.017Z",
+            "updatedAt": "2022-05-10T19:04:15.017Z",
+            "__v": 0
+        },
+        {
+            "_id": "627b88bfac37859de76f8083",
+            "name": "anurag jana",
+            "email": "anuragjana@gmail.com",
+            "password": "$2b$10$1.IQKxGBurkHNRLmEcKjRedj5iFvhJThvHO.fOoDfC25t2U/BIQtm",
+            "phone": 9674112280,
+            "gender": "male",
+            "dob": "2022-05-27  24:00",
+            "createdAt": "2022-05-11T09:58:23.788Z",
+            "updatedAt": "2022-05-11T09:58:23.788Z",
+            "__v": 0
+        },
+        {
+            "_id": "627b88beac37859de76f8080",
+            "name": "anurag jana",
+            "email": "anuragjana@gmail.com",
+            "password": "$2b$10$YVBUpzpcwyMdukaCkm43u.SAIUKPSVsSDPTycq.yx5Cx2F0Y.bf8K",
+            "phone": 9674112280,
+            "gender": "male",
+            "dob": "2022-05-27 24:00",
+            "createdAt": "2022-05-11T09:58:22.708Z",
+            "updatedAt": "2022-05-11T09:58:22.708Z",
+            "__v": 0
+        }
+    ]
+}

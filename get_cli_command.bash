@@ -35,5 +35,9 @@
 #   2- get create page:dashboard on home
 #   3- get create page:Socialfeed on home
 #   4- get create page:user_profile on home
+#   5- get create page:my_location on home
+#   6- get create page:google_map on home
+#   7- get create page:add_users on home
 
-# get generate model on data with assets/json/user-login.json
+# 1- get generate model on data with assets/json/user-login.json
+# 2- get generate model on data with assets/json/get-all-user.json

@@ -11,7 +11,7 @@ class HomeController extends GetxController {
 
   var bottomNavItems = [
     {
-      "label": "Home",
+      "label": "",
       // ignore: prefer_const_constructors
       "icon":
           //Padding(
@@ -64,7 +64,7 @@ class HomeController extends GetxController {
       ),
     },
     {
-      "label": "Profile",
+      "label": "",
       "icon": //Padding(
           // padding: EdgeInsets.only(top: 6.0),
           //child:
@@ -113,7 +113,7 @@ class HomeController extends GetxController {
       ),
     },
     {
-      "label": "User Add",
+      "label": "",
       "icon": //Padding(
           //  padding: EdgeInsets.all(6.0),
           Icon(
@@ -161,7 +161,7 @@ class HomeController extends GetxController {
       ),
     },
     {
-      "label": "Setting",
+      "label": "",
       "icon": //Padding(
           //  padding: EdgeInsets.all(6.0),
           // child:
@@ -198,6 +198,56 @@ class HomeController extends GetxController {
               },
               child: Icon(
                 Icons.settings,
+                size: 35.0,
+              ),
+              // child: Image.asset(
+              //   Resources.connectIcon,
+              //   color: AppColor.primaryColor2,
+              // ),
+            ),
+          ),
+        ],
+      ),
+    },
+    {
+      "label": "",
+      "icon": //Padding(
+          //  padding: EdgeInsets.all(6.0),
+          // child:
+          Icon(
+        Icons.my_location,
+        size: 35.0,
+      ),
+      // child: Image.asset(
+      //   Resources.connectIcon,
+      //   color: AppColor.iconGrey,
+      // ),
+      // ),
+      "activeIcon": Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          // Container(
+          //   height: 2.0,
+          //   width: 60.0,
+          //   color: Color(0xFFFFB96C),
+          //   margin: EdgeInsets.only(bottom: 8.0),
+          // ),
+          Padding(
+            padding: EdgeInsets.only(top: 1.0),
+            child: ShaderMask(
+              shaderCallback: (Rect bounds) {
+                // ignore: prefer_const_constructors
+                return LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    AppColor.primaryColor1,
+                    AppColor.primaryColor2,
+                  ],
+                ).createShader(bounds);
+              },
+              child: Icon(
+                Icons.my_location,
                 size: 35.0,
               ),
               // child: Image.asset(

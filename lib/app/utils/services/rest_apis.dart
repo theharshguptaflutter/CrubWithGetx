@@ -3,7 +3,7 @@ import 'package:crud_getxcli/app/utils/services/rest_routes.dart';
 
 class API {
   // static getAllSyncs() async => ApiUtils.getRequest(RestRoutes.getAllSyncs);
-  // static getAllUser() async => ApiUtils.getRequest(RestRoutes.getAllUser);
+  static getAllUser() async => ApiUtils.getRequest(RestRoutes.getAllUser);
   // static socialAllData() async => ApiUtils.getRequest(RestRoutes.socialAllData);
   // static rewardsAllData() async =>
   //     ApiUtils.getRequest(RestRoutes.rewardsAllData);
