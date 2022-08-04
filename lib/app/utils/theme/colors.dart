@@ -2,6 +2,9 @@ import "package:flutter/material.dart";
 
 class AppColor {
   // FE4980
+  static Color primaryColor = Colors.greenAccent.shade200;
+  static const Color buttonBg = Color.fromRGBO(24, 26, 30, 1);
+  static const Color appBackground = Colors.black;
   static const Color primaryColor1 = Color(0xFFFE4980);
   static const Color primaryColor2 = Color(0xFFFFC767);
   // ========
