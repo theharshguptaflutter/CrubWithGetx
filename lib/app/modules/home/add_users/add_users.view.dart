@@ -158,19 +158,27 @@ class AddUsersView extends GetView<AddUsersController> {
               children: [
                 Expanded(
                   flex: 2,
-                  child: Padding(
-                      padding:
-                          const EdgeInsets.only(top: 25.0, left: 25, right: 25),
-                      child: submitButton(btnName: "Select dob")),
+                  child: GestureDetector(
+                    onTap: () => {controller.chooseDate()},
+                    child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 25.0, left: 25, right: 25),
+                        child: submitButton(btnName: "Select dob")),
+                  ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      right: 25.0,
-                      top: 25,
+                  child: GestureDetector(
+                    onTap: () {
+                      controller.getUserImage();
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        right: 25.0,
+                        top: 25,
+                      ),
+                      child: submitButton(btnName: "Profile"),
                     ),
-                    child: submitButton(btnName: "Profile"),
                   ),
                 ),
               ],
@@ -259,10 +267,8 @@ class AddUsersView extends GetView<AddUsersController> {
   }
 
   userlistdata(index) {
-    // final index = 0;
     return Obx(() => controller.gettAllUser.value.alluser != null
         ? Column(
-            //mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // for (var index = 0;
               //     index < controller.gettAllUser.value.alluser!.length;
@@ -301,7 +307,8 @@ class AddUsersView extends GetView<AddUsersController> {
               Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: Text(
-                  controller.gettAllUser.value.alluser![index].name.toString(),
+                  controller.gettAllUser.value.alluser?[index].name ?? "",
+                  //controller.gettAllUser.value.alluser![index].name.toString(),
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,

@@ -14,6 +14,8 @@ abstract class Routes {
   static const GOOGLE_MAP = _Paths.HOME + _Paths.GOOGLE_MAP;
   static const CHAT = _Paths.HOME + _Paths.CHAT;
   static const ADD_USERS = _Paths.HOME + _Paths.ADD_USERS;
+  static const DIOTEST = _Paths.HOME + _Paths.DIOTEST;
+  static const FUTUTE_BUILDER = _Paths.FUTUTE_BUILDER;
 }
 
 abstract class _Paths {
@@ -29,4 +31,6 @@ abstract class _Paths {
   static const GOOGLE_MAP = '/google-map';
   static const CHAT = '/chat';
   static const ADD_USERS = '/add-users';
+  static const DIOTEST = '/diotest';
+  static const FUTUTE_BUILDER = '/futute-builder';
 }

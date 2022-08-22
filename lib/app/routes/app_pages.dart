@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/futute_builder/futute_builder.binding.dart';
+import '../modules/futute_builder/futute_builder.view.dart';
 import '../modules/home/Socialfeed/socialfeed.binding.dart';
 import '../modules/home/Socialfeed/socialfeed.view.dart';
 import '../modules/home/add_users/add_users.binding.dart';
@@ -8,6 +10,8 @@ import '../modules/home/chat/chat.binding.dart';
 import '../modules/home/chat/chat.view.dart';
 import '../modules/home/dashboard/dashboard.binding.dart';
 import '../modules/home/dashboard/dashboard.view.dart';
+import '../modules/home/diotest/diotest.binding.dart';
+import '../modules/home/diotest/diotest.view.dart';
 import '../modules/home/google_map/google_map.binding.dart';
 import '../modules/home/google_map/google_map.view.dart';
 import '../modules/home/home.binding.dart';
@@ -82,12 +86,22 @@ class AppPages {
           page: () => AddUsersView(),
           binding: AddUsersBinding(),
         ),
+        GetPage(
+          name: _Paths.DIOTEST,
+          page: () => DiotestView(),
+          binding: DiotestBinding(),
+        ),
       ],
     ),
     GetPage(
       name: _Paths.SPLASH,
       page: () => SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.FUTUTE_BUILDER,
+      page: () => FututeBuilderView(),
+      binding: FututeBuilderBinding(),
     ),
   ];
 }
